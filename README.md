@@ -1,1 +1,1 @@
-# Rock_Paper_Scissors
+# Rock_Paper_Scissors project using Javascript!!!
