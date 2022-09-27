@@ -1,0 +1,56 @@
+<script>
+
+    function getComputerChoice() {
+        const rockPaperScissors = ["Rock", "Paper", "Scissors"];
+        let pcChoice = rockPaperScissors[Math.floor(Math.random()*rockPaperScissors.length)];
+        return pcChoice
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        let winner=""
+        if (playerSelection=="rock" && computerSelection=="scissors") {
+            winner="Player"
+        }   else if (playerSelection=="rock" && computerSelection=="paper") {
+            winner="Computer"
+        }   else if (playerSelection=="paper" && computerSelection=="scissors") {
+            winner="Computer"
+        }   else if (playerSelection=="paper" && computerSelection=="rock") {
+            winner="Player"
+        }   else if (playerSelection=="scissors" && computerSelection=="paper") {
+            winner="Player"
+        }   else if (playerSelection=="scissors" && computerSelection=="rock") {
+            winner="Computer"
+        }   
+        return winner
+    }
+
+    function game() {
+        let playerScore=0
+        let computerScore=0
+        for (let i=0; i<5; i++) {
+            const playerSelection = prompt("Please select Rock Paper or Scissors: " ).toLocaleLowerCase()
+            const computerSelection = getComputerChoice().toLowerCase()
+            if (playerSelection==computerSelection) {
+                i=i-1
+                alert("It's a draw. plase pick again")
+            }
+            playRound(playerSelection, computerSelection)
+            if (playRound.winner=="Player") {
+                playerScore += 1
+                alert(winner,"wins this round")
+                }   else if (playRound.winner=="Computer") {
+                computerScore+=1
+                alert(winner,"wins this round")
+            }
+
+        }
+        let winnerOfFive = ""
+        if (playerScore > computerScore) {
+            winnerOfFive = "Player"
+        }   else {
+            winnerOfFive = "Computer"
+        }
+        return winnerOfFive
+    }
+
+</script>
