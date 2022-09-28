@@ -1,56 +1,24 @@
-<script>
-
-    function getComputerChoice() {
-        const rockPaperScissors = ["Rock", "Paper", "Scissors"];
-        let pcChoice = rockPaperScissors[Math.floor(Math.random()*rockPaperScissors.length)];
-        return pcChoice
-    }
-
-    function playRound(playerSelection, computerSelection) {
-        let winner=""
-        if (playerSelection=="rock" && computerSelection=="scissors") {
-            winner="Player"
-        }   else if (playerSelection=="rock" && computerSelection=="paper") {
-            winner="Computer"
-        }   else if (playerSelection=="paper" && computerSelection=="scissors") {
-            winner="Computer"
-        }   else if (playerSelection=="paper" && computerSelection=="rock") {
-            winner="Player"
-        }   else if (playerSelection=="scissors" && computerSelection=="paper") {
-            winner="Player"
-        }   else if (playerSelection=="scissors" && computerSelection=="rock") {
-            winner="Computer"
-        }   
-        return winner
-    }
-
-    function game() {
-        let playerScore=0
-        let computerScore=0
-        for (let i=0; i<5; i++) {
-            const playerSelection = prompt("Please select Rock Paper or Scissors: " ).toLocaleLowerCase()
-            const computerSelection = getComputerChoice().toLowerCase()
-            if (playerSelection==computerSelection) {
-                i=i-1
-                alert("It's a draw. plase pick again")
-            }
-            playRound(playerSelection, computerSelection)
-            if (playRound.winner=="Player") {
-                playerScore += 1
-                alert(winner,"wins this round")
-                }   else if (playRound.winner=="Computer") {
-                computerScore+=1
-                alert(winner,"wins this round")
-            }
-
-        }
-        let winnerOfFive = ""
-        if (playerScore > computerScore) {
-            winnerOfFive = "Player"
-        }   else {
-            winnerOfFive = "Computer"
-        }
-        return winnerOfFive
-    }
-
-</script>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="interactions.js" async></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>beat the machine</h1>
+        <h2>First to 5 wins</h2>
+        <div class="button">
+            <button1 class="btn">image of Rock</button1>
+            <button2 clas="btn">image ofPaper</button2>
+            <button3 class="btn">image Scissors</button3>
+        </div>
+        <div class="text-line">
+            <p class="text" id="player-score">Player Score:</p>
+            <p class="text" id="comp-score">Computer Score:</p>
+            </div>
+            <div>
+                <p class="text" id="output">You have to beat the MACHINE!!!</p>
+            </div>
+    </body>
+</html>
