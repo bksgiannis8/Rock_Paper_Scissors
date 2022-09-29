@@ -44,16 +44,15 @@ function playRound(playerSelection, computerSelection) {
     }   else if (playerSelection=="scissors" && computerSelection=="rock") {
         winner="Computer";
     }   else if (playerSelection==computerSelection) {
-        alert("its a draw");
-        winner=""
+        output.textContent = "You both picked the same. Plsease pick again!";
     }
     if (winner=="Player") {
         playerScore +=1;
-        alert("you win this round");
+        output.textContent = "Nice, you won this round. Keep this UP";
     }   
     else if (winner=="Computer") {
         compScore +=1;
-        alert("Machine waon this round");
+        output.textContent = "Machine won this round. Better luck next try!!!";
     }
     return winner;
 }
@@ -62,14 +61,13 @@ function playGame() {
     playRound(playerSelection, computerSelection);
     player.textContent = `Player Score: ${playerScore}`;
     computer.textContent = `Computer Score: ${compScore}`;
-    let winnerOfFive; 
     if (playerScore == 5) {
-        winnerOfFive = "Player";
+        output.textContent = "FANTASTIC JOB. YOU WON!!!";
         playerScore = 0;
         compScore = 0;
     }   
     else if (compScore==5) {
-        winnerOfFive = "Computer";
+        output.textContent = "SADLY, YOU LOST!!!";
         playerScore = 0;
         compScore = 0;
     }
