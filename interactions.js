@@ -45,26 +45,33 @@ function playRound(playerSelection, computerSelection) {
         winner="Computer";
     }   else if (playerSelection==computerSelection) {
         alert("its a draw");
+        winner=""
     }
-    if (winner="player") {
+    if (winner=="Player") {
         playerScore +=1;
-    }   else if (winner="computer") {
-            compScore +=1;
+        alert("you win this round");
+    }   
+    else if (winner=="Computer") {
+        compScore +=1;
+        alert("Machine waon this round");
     }
     return winner;
 }
 
 function playGame() {
-    
-    while (playerScore<5 || compScore<5) {
-        playRound(playerSelection, computerSelection)
+    playRound(playerSelection, computerSelection);
+    player.textContent = `Player Score: ${playerScore}`;
+    computer.textContent = `Computer Score: ${compScore}`;
+    let winnerOfFive; 
+    if (playerScore == 5) {
+        winnerOfFive = "Player";
+        playerScore = 0;
+        compScore = 0;
+    }   
+    else if (compScore==5) {
+        winnerOfFive = "Computer";
+        playerScore = 0;
+        compScore = 0;
     }
-    let winnerOfFive 
-    if (playerScore > compScore) {
-        winnerOfFive = "Player"
-    }   else {
-        winnerOfFive = "Computer"
-    }
     
-    return winnerOfFive
 }
