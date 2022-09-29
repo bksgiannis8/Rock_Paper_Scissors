@@ -1,0 +1,48 @@
+body {
+    background-image: url("images/background.gif");
+    background-repeat: no-repeat;
+    background-size:cover;
+    color: yellow;
+    font-family: 'Calibri', sans-serif;
+}
+
+.button {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#rock {
+    background: url('images/rock.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    background-color: #000;
+ }
+
+#paper {
+    background: url('images/paper.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    background-color: #000;
+}
+
+#scissors {
+    background: url('images/scissors.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    background-color: #000;
+}
+
+.btn {
+    height: 250px;
+    width: 250px;
+
+}
+
+.img {
+    object-fit: cover;
+}
+
+
